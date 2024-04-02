@@ -44,7 +44,7 @@
    из этого репозитория.
 
 - ```sudo apt update``` обновляем параметры систмы
-- ```sudo apt-get install mysql-server``` устанавливаем mysql-server
+- ```sudo apt install mysql-server``` устанавливаем mysql-server
 - ```systemctl status mysql``` проверяем результат установки
 
 4. Установить и удалить deb-пакет с помощью dpkg.
