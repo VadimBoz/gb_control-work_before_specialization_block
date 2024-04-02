@@ -32,7 +32,7 @@ public class View {
 
     public void addAnimalMenu1() {
         System.out.println();
-        System.out.println("Быберете тип животного:");
+        System.out.println("Быберете номер типа животного (число):");
         System.out.println(AnimalType.AnimalTypeTostring());
     }
     public void addAnimalMenu2() {
