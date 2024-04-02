@@ -5,9 +5,6 @@ import java.util.ArrayList;
 
 public class ServiceAnimal {
 
-//    public  addAnimal()
-//
-//
         public static ArrayList<CommandsAnimal> parseIntCommandsAnimal(String str) {
             String[] strPrepare = str.trim().split(" +");
             ArrayList<CommandsAnimal> res = new ArrayList<>();
@@ -46,7 +43,6 @@ public class ServiceAnimal {
         }
         return null;
     }
-
 
 
 

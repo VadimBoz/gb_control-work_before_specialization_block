@@ -10,12 +10,6 @@ import java.util.ArrayList;
 
 public class ServiceDB {
 
-//    ArrayList<Cat> catList;
-//    ArrayList<Dog> dogList;
-//    ArrayList<Hamster> hamsterList;
-//    ArrayList<Camel> camelList;
-//    ArrayList<Donkey> donkeyList;
-//    ArrayList<Horse> horseList;
     Animals animals = new Animals();
     String separator = System.getProperty("file.separator");
     File fileCats = new File(getPathDataDirectory().toAbsolutePath() + separator + "cats.srv");
@@ -26,44 +20,12 @@ public class ServiceDB {
     File fileDonkeys = new File(getPathDataDirectory().toAbsolutePath() + separator + "donkeys.srv");
 
 
-
-    /*
-
-      public void writeToySetToFile(List<Toy> toys) throws IOException {
-          String separator = System.getProperty("file.separator");
-          boolean appendRecord = false;
-          File fileToyList = new File(getPathDataDirectory() + separator + "sweepstakes.srv");
-  //        if (fileToyList.exists()) appendRecord = true;
-          try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileToyList, appendRecord))) {
-              for (Toy item : toys) {
-                  bw.write(item.toCrvString() + "\n");
-                  System.out.println(item.toCrvString());
-              }
-              bw.flush();
-              System.out.println("Данные записаны в файл " + fileToyList.getAbsolutePath() + "\n");
-          } catch (IOException e) {
-              throw new IOException("данные не записаны, файл не создан");
-          }
-      }
-
-
-      public void writeToySetToFile(PriorityQueue<Toy> toys) throws IOException {
-          List<Toy> toyList = new ArrayList<>(toys);
-          writeToySetToFile(toyList);
-
-      }
-
-  */
-
     public Animals getAnimals() {
         return animals;
     }
 
 
-
     public void readAnimalToList() throws IOException {
-
-
 
         if (!fileCats.exists()) throw new IOException("Файл с данными cats.srv не найден");
         if (!fileDogs.exists()) throw new IOException("Файл с данными dogs.srv не найден");
@@ -78,9 +40,7 @@ public class ServiceDB {
         readDataFromFile(fileHorses, AnimalType.Camel);
         readDataFromFile(fileCamels, AnimalType.Horse);
         readDataFromFile(fileDonkeys, AnimalType.Donkey);
-
     }
-
 
     private void readDataFromFile(File file, AnimalType animalType) throws IOException {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -128,7 +88,6 @@ public class ServiceDB {
                         }
                         default -> System.out.println("что не так с данными в файлах");
                 }
-
         }
         br.close();
     }
@@ -235,7 +194,6 @@ public class ServiceDB {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 }
