@@ -171,9 +171,10 @@ public class ServiceDB {
                 for (CommandsAnimal comand: item.getCommands()) {
                     comandsRes = comandsRes + comand.name() + "-";
                 }
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-uuuu");
                 comandsRes = comandsRes.substring(0, comandsRes.length()-1);
                 String line = item.getId() + ";" + item.getName() + ";" +
-                        animalType.name() + ";" + item.getDataBirth() + ";" + comandsRes + "\n";
+                        animalType.name() + ";" + formatter.format(item.getDataBirth()) + ";" + comandsRes + "\n";
                 bw.write(line);
             }
         } catch (IOException e) {
