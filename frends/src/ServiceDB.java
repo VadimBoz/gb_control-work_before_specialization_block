@@ -8,6 +8,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
+/***
+ * bd
+ * @author vadim
+ */
+
 public class ServiceDB {
 
     Animals animals = new Animals();
@@ -148,10 +153,11 @@ public class ServiceDB {
                 "frends" + separator +
                 "src" + separator +
                 "data" + separator);
-//        System.out.println(defaultDir);
+        System.out.println(defaultDir);
         if (Files.exists(defaultDir)) {
             System.out.println("папка по умолчанию c БД найдена " + defaultDir.toAbsolutePath());
         } else {
+
             System.out.println("папка по умолчанию c БД не найдена, создаем новую");
             try {
                 Files.createDirectories(defaultDir);

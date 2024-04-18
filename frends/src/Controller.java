@@ -1,23 +1,26 @@
 import Animals.*;
 import Animals.CommandsAnimal;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+/***
+ * контроллер приложения
+ * длтдш
+
+ */
+
 
 public class Controller {
 
+
+
 //        Animals animals = new Animals();
         View animalView = new View();
-        ServiceAnimal serviceAnimal = new ServiceAnimal();
+//        ServiceAnimal serviceAnimal = new ServiceAnimal();
         ServiceDB serviceDB = new ServiceDB();
 
         public void start() {
@@ -31,7 +34,7 @@ public class Controller {
                 System.out.println("данные загружены успешно");
                 String key = "";
                 Scanner scanner = new Scanner(System.in);
-                while (!Objects.equals(key, "6")) {
+                while (!Objects.equals(key, "7")) {
                         animalView.startMenu();
                         key = scanner.nextLine().trim();
                         switch (key) {
@@ -102,7 +105,6 @@ public class Controller {
                         animalView.printInfo("Добавлено животное");
                         animalView.printInfo(current.toString());
                         flag2 = 1;
-
                 }
         }
 
@@ -165,23 +167,13 @@ public class Controller {
                                 continue;
                         }
 
-
                         animalView.addCommandsToAnimalMenu2();
                         String animalCommands = scanner4.nextLine();
                         ArrayList<CommandsAnimal> commands = ServiceAnimal.parseIntCommandsAnimal(animalCommands);
                         curAnimal.setAddCommands(commands);
                         System.out.println(curAnimal);
                         flag4 = 1;
-
-
-
-
                 }
-
-
-
-
-
         }
 
 
@@ -210,13 +202,8 @@ public class Controller {
                                                 System.out.println(item);
                                 }
                         }
-
-
 //                        flag5 = 1;
                 }
-
-
-
         }
 
         public void printCommandsListForId() {

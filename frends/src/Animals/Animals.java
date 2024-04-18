@@ -4,6 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+/***
+ * коллекции животных
+ */
+
 public class Animals {
     ArrayList<Cat> catList = new ArrayList<>();
     ArrayList<Dog> dogList = new ArrayList<>();
@@ -28,6 +32,11 @@ public class Animals {
         }
     }
 
+    /***
+     * добавление животного
+     * @param animal
+     * @param animalType
+     */
     public void addAnimal(Animal animal, AnimalType animalType) {
         switch (animalType) {
             case Cat -> catList.add((Cat) animal);
@@ -39,6 +48,14 @@ public class Animals {
         }
     }
 
+
+    /***
+     * добавление животного
+     * @param name
+     * @param animalType
+     * @param dataBirth
+     * @param  commands
+     */
     public Animal createAnimal (String name, LocalDate dataBirth, ArrayList<CommandsAnimal> commands, AnimalType animalType) {
         switch (animalType) {
             case Cat -> {return new Cat(name, dataBirth, commands);}

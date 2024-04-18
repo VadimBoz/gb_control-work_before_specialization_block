@@ -2,9 +2,15 @@ import Animals.AnimalType;
 import Animals.CommandsAnimal;
 
 import java.util.ArrayList;
-
+/***
+ *   реестр учета домашних животных
+ * @author vadim
+ */
 public class ServiceAnimal {
-
+    /***
+     *   реестр учета домашних животных
+     *   служебные методы
+     */
         public static ArrayList<CommandsAnimal> parseIntCommandsAnimal(String str) {
             String[] strPrepare = str.trim().split(" +");
             ArrayList<CommandsAnimal> res = new ArrayList<>();
@@ -43,9 +49,6 @@ public class ServiceAnimal {
         }
         return null;
     }
-
-
-
 }
 
 
